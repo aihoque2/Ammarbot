@@ -13,11 +13,11 @@ app.use(bodyParser.json())
 
 //Routes
 app.get('/',function(req,res){
-	res.send("Hi, I'm chatbot!")
+	res.send("Hi, I'm Ammarbot!")
 })
 
 app.get('/webhook/', function(req, res){
-	if (req.query['hub.verify_token']==="flames"){
+	if (req.query['hub.verify_token']==="ammarbot"){
 		res.send(req.query['hub.challenge'])
 	}
 	res.send("Wrong token")
