@@ -24,7 +24,7 @@ let token = ""
 // Facebook 
 
 app.get('/webhook/', function(req, res) {
-	if (req.query['hub.verify_token'] === "blondiebytes") {
+	if (req.query['hub.verify_token'] === "aihoque2") {
 		res.send(req.query['hub.challenge'])
 	}
 	res.send("Wrong token")
@@ -37,11 +37,12 @@ app.post('/webhook/', function(req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
-			sendText(sender, "Text echo: " + text.substring(0, 100))
+			decideMessage(sender, text)
 		}
 	}
 	res.sendStatus(200)
 })
+
 
 function sendText(sender, text) {
 	let messageData = {text: text}
@@ -84,7 +85,7 @@ app.use(bodyParser.json())
 // ROUTES
 
 app.get('/', function(req, res) {
-	res.send("Hi I am a chatbot")
+	res.send("Hi I am Ammarbot")
 })
 
 let token = ""
@@ -92,7 +93,7 @@ let token = ""
 // Facebook 
 
 app.get('/webhook/', function(req, res) {
-	if (req.query['hub.verify_token'] === "blondiebytes") {
+	if (req.query['hub.verify_token'] === "aihoque2") {
 		res.send(req.query['hub.challenge'])
 	}
 	res.send("Wrong token")
